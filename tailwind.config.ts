@@ -20,7 +20,7 @@ const config: Config = {
         green: '#B4FF5C',
         white: 'white',
         textGray: '#DCDCDC'
-      }
+      },
     },
   },
   plugins: [],
