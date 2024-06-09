@@ -1,8 +1,14 @@
 import Button from '@/components/ui/button';
 import Image from 'next/image';
+
 import Accordion from '@/components/layout/accordion/Accordion';
 import { Questions } from '@/types/questions';
-import {questions} from '@/api/questions';
+import { questions } from '@/api/questions';
+import { SlLocationPin } from "react-icons/sl";
+import { MdOutlineLocalPhone } from "react-icons/md";
+import { HiOutlineEnvelope } from "react-icons/hi2";
+import { FaAsterisk } from "react-icons/fa";
+import { DiJava } from 'react-icons/di';
 
 
 export default function Home() {
@@ -102,9 +108,55 @@ export default function Home() {
         </div>
       </div>
       {/* CONTACTS */}
-      <div className="w-screen h-auto flex items-center justify-center bg-white">
-        <div className="flex flex-row justify-between items-center">
-
+      <div className="pt-20 pb-40 w-screen h-auto flex items-center justify-center bg-white">
+        <div className="flex flex-row justify-between items-start gap-28">
+          {/* LEFT */}
+          <div className='w-[530px] flex flex-col items-start justify-between gap-8'>
+            <h1 className='font-bold text-[58px] leading-[110%]'>Get in Touch with Spine</h1>
+            <p className='font-bold text-base leading-[140%] text-[#606060]'>Whether you have questions about our services, want to discuss a potential collaboration, or just feel like saying hello, we&quot;d love to hear from you.</p>
+            <div className='w-full pt-7 flex flex-col gap-5 items-start font-bold text-xl leading-[140%] text-[#464646]'>
+              <span className='flex items-center justify-center gap-5'><SlLocationPin size={32} />Plovdiv, K. Riacho 95, Bulgaria</span>
+              <span className='flex items-center justify-center gap-5'><MdOutlineLocalPhone size={32} />+359 884 77 77 777</span>
+              <span className='flex items-center justify-center gap-5'><HiOutlineEnvelope size={32} />j.borisov@spine.com</span>
+            </div>
+          </div>
+          {/* RIGHT */}
+          <div className='w-[530px] flex flex-col items-start justify-between gap-8'>
+            <form className="bg-none flex flex-col gap-5">
+              <div className="mb-4 flex flex-row items-end justify-between gap-8">
+                <div className='w-full flex flex-col items-start'>
+                  <label className="flex gap-2 text-[#0C0C0C] text-base font-bold mb-2">
+                    Name <FaAsterisk color='#FE2A2A' />
+                  </label>
+                  <input className="bg-[#F1F4F5] rounded-lg w-full py-3 px-3 text-sm text-[#7B7B7B] font-bold leading-[140%] focus:outline" id="username" type="text" placeholder="First Name" />
+                </div>
+                <input className="w-full bg-[#F1F4F5] rounded-lg py-3 px-3 text-sm text-[#7B7B7B] font-bold leading-[140%] focus:outline" id="username" type="text" placeholder="Last Name" />
+              </div>
+              <div className="mb-4 flex flex-row items-end justify-between gap-8">
+                <div className='w-1/2 flex flex-col items-start'>
+                  <label className="flex gap-2 text-[#0C0C0C] text-base font-bold mb-2">
+                    Email <FaAsterisk color='#FE2A2A' />
+                  </label>
+                  <input className="bg-[#F1F4F5] rounded-lg w-full py-3 px-3 text-sm text-[#7B7B7B] font-bold leading-[140%] focus:outline" id="username" type="text" placeholder="company@gmail.com" />
+                </div>
+                <div className='w-1/2 flex flex-col items-start'>
+                  <label className="flex gap-2 text-[#0C0C0C] text-base font-bold mb-2">
+                    Phone <FaAsterisk color='#FE2A2A' />
+                  </label>
+                  <input className="bg-[#F1F4F5] rounded-lg w-full py-3 px-3 text-sm text-[#7B7B7B] font-bold leading-[140%] focus:outline" id="username" type="text" placeholder="+359 000 000 000" />
+                </div>
+              </div>
+              <div className="mb-4 flex flex-row gap-8">
+                <div className='w-full flex flex-col items-start'>
+                  <label className=" text-[#0C0C0C] text-base font-bold mb-2">
+                    Comment or Message
+                  </label>
+                  <textarea className="h-48 resize-none bg-[#F1F4F5] rounded-lg w-full py-3 px-3 text-sm text-[#7B7B7B] font-bold leading-[140%] focus:outline" id="username" />
+                </div>
+              </div>
+              <Button variant="secondary">Send Message</Button>
+            </form>
+          </div>
         </div>
       </div>
     </>
